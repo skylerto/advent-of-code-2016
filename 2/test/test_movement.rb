@@ -15,7 +15,6 @@ class TestPlayer < Test::Unit::TestCase
   def test_move
     player = Player.new @keypad
     player.move ['U', 'L', 'L']
-    assert_equal(player.position, [0,0])
     assert_equal(player.code, [1])
   end
 end

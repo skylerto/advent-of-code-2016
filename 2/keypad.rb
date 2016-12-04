@@ -1,6 +1,8 @@
 # Represents a 9-digit keypad
 # @author Skyler Layne
 class Keypad
+  # Represents the keypad board as a 2D array.
+  # @return [Array] the 2D keypad.
   attr_accessor :board
 
   def initialize
