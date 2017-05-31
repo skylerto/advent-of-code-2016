@@ -1,11 +1,12 @@
 # => A Player in the advent of code game
 class Player
-  attr_accessor :directions, :orientation, :current_position
+  attr_accessor :directions, :orientation, :overlap_position
 
   def initialize
     # N, E, S, W
     @directions = [0, 0, 0, 0]
     @orientation = 0
+    @overlap_position = 0
   end
 
   def move(position)
@@ -41,5 +42,7 @@ class Player
 
   def apply_direction(amount)
     @directions[@orientation] += amount
+    overlap = @directions[0].eql?(@directions[2]) && @directions[1].eql?(@directions[3])
+    @overlap_position = calculate_distance if !@overlap_position.eql?(0) && overlap
   end
 end

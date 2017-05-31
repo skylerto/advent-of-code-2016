@@ -77,4 +77,13 @@ class TestPlayer < Test::Unit::TestCase
     assert_equal([0, 2, 0, 2], player.directions)
     assert_equal(0, player.calculate_distance)
   end
+
+  def test_player_overlap
+    player = Player.new
+    player.move 'R8'
+    player.move 'R4'
+    player.move 'R4'
+    player.move 'R8'
+    assert_equal(4, player.overlap_position)
+  end
 end

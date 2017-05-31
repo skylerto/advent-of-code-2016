@@ -6,4 +6,5 @@ player = Player.new
 reader.input.each do |position|
   player.move position
 end
-puts player.calculate_distance
+puts "Player Distance: #{player.calculate_distance}"
+puts "Player Crossover: #{player.overlap_position}"
